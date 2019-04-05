@@ -1,0 +1,107 @@
+int a,b,i,sum,d,n,sum2,sum3,j;
+	char s[20];
+		sum=1;
+		sum2=1;
+		sum3=1;
+		printf("請輸入運算方式:\n");
+		scanf("%s",&s);
+		if (s=="+")
+		{
+		    printf("請輸入二數字:\n");
+			scanf("%d %d",&a,&b);
+			printf("答案:%d\n",a+b);
+		}
+		else if (s=="-")
+		{
+		    printf("請輸入二數字:\n");
+			scanf("%d %d",&a,&b);
+			printf("答案:%d\n",a-b);
+		}
+		else if (s=="*")
+		{
+			printf("請輸入二數字:\n");
+			scanf("%d %d",&a,&b);
+			printf("答案:%d\n",a*b);
+		}
+	    else if (s=="/")
+		{
+			printf("請輸入二數字:\n");
+			scanf("%d %d",&a,&b);
+			printf("答案:%g\n",(double)a/(double)b);
+		}
+		else if (s=="%")
+		{
+			printf("請輸入二數字:\n");
+			scanf("%d %d",&a,&b);
+			printf("商:%d,餘:%d",a/b,a%b);	
+		}
+		else if (s=="a")
+		{
+			printf("請輸入首項 公差 項數:\n");
+			scanf("%d %d %d",&a,&d,&n);
+			printf("第%d項為:%d\n和為:%d\n",n,a+(n-1)*d,(2*a+(n-1)*d)*d/2);
+		}
+		else if (s=="!")
+		{
+			printf("請輸入數字:\n");
+			scanf("%d",&a);
+			for (i=1;i<=a;i++)
+			{
+				sum=sum*i;
+			}
+			printf("答案:%d\n",sum);
+		}
+		else if (s=="p")
+		{
+			printf("請輸入x取y:\n");
+			scanf("%d %d",&a,&b);
+			for (i=a;i>=b;i--)
+			{
+				sum=sum*i;
+			}
+			printf("答案:%d\n",sum);
+		}
+		else if (s=="c")
+		{
+			printf("請輸入x取y:\n");
+			scanf("%d %d",&a,&b);
+			for (i=a;i>=b;i--)
+			{
+				sum=sum*i;
+			}
+			for (i=1;i<=b;i++)
+			{
+				sum2=sum2*i;
+			}
+			printf("答案:%d\n",sum/sum2);
+		}
+		else if (s=="b")
+		{
+			printf("請輸入層數:\n");
+			scanf("%d",&a);
+			if (a==1)
+			printf("1");
+			else if (a==2)
+			printf("1 1");
+			else if (a>=3)
+			{
+				a=a-1;
+				for (i=1;i<=a;i++)
+				{
+					sum=sum*i;
+				}
+				printf("1 ");
+				for (i=1;i<a;i++)
+				{
+					sum2=sum2*i;
+					sum3=1;
+					for (j=a-i;j>=1;j--)
+					{
+						sum3=sum3*j;
+					}
+					printf("%d ",sum/sum2*sum3);
+				}
+				printf(" 1\n");
+		   }
+	   }
+	return 0;
