@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(void){
+FILE *test,*look;
+    int n;
+    scanf("%d",&n);
+    test=fopen("test.txt","a");
+    if (test==NULL)
+        printf("檔案開啟失敗!!\n");
+    fprintf(test,"%d",n);
+    fclose(test);
+    look=fopen("test.txt","r");
+    fscanf(look,"%d",&n);
+    printf("%d",n);
+    fclose(look);
+    return ;
+    }
